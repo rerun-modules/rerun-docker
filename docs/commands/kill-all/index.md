@@ -1,4 +1,4 @@
-[docker](../../index.html)
+[docker](../../index.md)
 # kill-all 
 
 Kills all running containers
@@ -23,7 +23,7 @@ Use the `stubbs:test` command to to run test plans.
 
 *Test plan sources*
 
-* [kill-all-1](../../tests/kill-all-1.html)
+* [kill-all-1](../../tests/kill-all-1.md)
   * it fails without a real test
 
 ## SCRIPT
@@ -36,7 +36,7 @@ command. It will open the command script in your shell EDITOR.
 
 *Script source*
 
-* [script](script.html): `RERUN_MODULE_DIR/commands/kill-all/script`
+* [script](script.md): `RERUN_MODULE_DIR/commands/kill-all/script`
 
 ## METADATA
 

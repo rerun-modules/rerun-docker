@@ -1,4 +1,4 @@
-[docker](../../index.html)
+[docker](../../index.md)
 
 # mount
 
@@ -16,7 +16,7 @@ Where to mount the current directory
 
 The following commands use this option.
 
-* [run](../../commands/run/index.html)
+* [run](../../commands/run/index.md)
 
 ## METADATA
 

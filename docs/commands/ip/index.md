@@ -1,4 +1,4 @@
-[docker](../../index.html)
+[docker](../../index.md)
 # ip 
 
 Get the IP of a running container
@@ -35,7 +35,7 @@ command. It will open the command script in your shell EDITOR.
 
 *Script source*
 
-* [script](script.html): `RERUN_MODULE_DIR/commands/ip/script`
+* [script](script.md): `RERUN_MODULE_DIR/commands/ip/script`
 
 ## METADATA
 

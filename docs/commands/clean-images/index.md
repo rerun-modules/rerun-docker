@@ -1,4 +1,4 @@
-[docker](../../index.html)
+[docker](../../index.md)
 # clean-images 
 
 Removes all dangling images (i.e. not in use)
@@ -23,7 +23,7 @@ Use the `stubbs:test` command to to run test plans.
 
 *Test plan sources*
 
-* [clean-images-1](../../tests/clean-images-1.html)
+* [clean-images-1](../../tests/clean-images-1.md)
   * it fails without a real test
 
 ## SCRIPT
@@ -36,7 +36,7 @@ command. It will open the command script in your shell EDITOR.
 
 *Script source*
 
-* [script](script.html): `RERUN_MODULE_DIR/commands/clean-images/script`
+* [script](script.md): `RERUN_MODULE_DIR/commands/clean-images/script`
 
 ## METADATA
 

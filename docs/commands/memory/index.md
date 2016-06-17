@@ -1,4 +1,4 @@
-[docker](../../index.html)
+[docker](../../index.md)
 # memory 
 
 Kills all running containers
@@ -35,7 +35,7 @@ command. It will open the command script in your shell EDITOR.
 
 *Script source*
 
-* [script](script.html): `RERUN_MODULE_DIR/commands/memory/script`
+* [script](script.md): `RERUN_MODULE_DIR/commands/memory/script`
 
 ## METADATA
 

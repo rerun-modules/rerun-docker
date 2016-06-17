@@ -5,6 +5,6 @@ Use the `stubbs:test` command to to run test plans.
 
 *Test plan sources*
 
-* [update-hosts-1](tests/update-hosts-1.html)
+* [update-hosts-1](tests/update-hosts-1.md)
   * it fails without a real test
 

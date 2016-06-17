@@ -5,6 +5,6 @@ Use the `stubbs:test` command to to run test plans.
 
 *Test plan sources*
 
-* [docker-ip-1](tests/docker-ip-1.html)
+* [docker-ip-1](tests/docker-ip-1.md)
   * it fails without a real test
 

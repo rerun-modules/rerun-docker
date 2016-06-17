@@ -12,33 +12,33 @@ Docker Shortcuts
 
 ## COMMANDS
 
-* [clean-containers](commands/clean-containers/index.html): Removes all containers
-* [clean-images](commands/clean-images/index.html): Removes all dangling images (i.e. not in use)
-* [enter](commands/enter/index.html): Run an existing container and execute commands
-* [ip](commands/ip/index.html): Get the IP of a running container
-* [kill-all](commands/kill-all/index.html): Kills all running containers
-* [memory](commands/memory/index.html): Kills all running containers
-* [run](commands/run/index.html): Run an existing container and execute commands
-* [start-ui](commands/start-ui/index.html): Start docker-ui. Browse to http://localhost:9000/ to view/manage containers
-* [update-hosts](commands/update-hosts/index.html): Update local /etc/hosts file with container IP addresses
+* [clean-containers](commands/clean-containers/index.md): Removes all containers
+* [clean-images](commands/clean-images/index.md): Removes all dangling images (i.e. not in use)
+* [enter](commands/enter/index.md): Run an existing container and execute commands
+* [ip](commands/ip/index.md): Get the IP of a running container
+* [kill-all](commands/kill-all/index.md): Kills all running containers
+* [memory](commands/memory/index.md): Kills all running containers
+* [run](commands/run/index.md): Run an existing container and execute commands
+* [start-ui](commands/start-ui/index.md): Start docker-ui. Browse to http://localhost:9000/ to view/manage containers
+* [update-hosts](commands/update-hosts/index.md): Update local /etc/hosts file with container IP addresses
 
 ## OPTIONS
 
-* [mount](options/mount/index.html): Where to mount the current directory
+* [mount](options/mount/index.md): Where to mount the current directory
 
 ## TESTS
 
-* [clean-containers-1](tests/clean-containers-1.html)
-* [clean-images-1](tests/clean-images-1.html)
-* [docker-ip-1](tests/docker-ip-1.html)
-* [enter-1](tests/enter-1.html)
-* [kill-all-1](tests/kill-all-1.html)
-* [start-ui-1](tests/start-ui-1.html)
-* [update-hosts-1](tests/update-hosts-1.html)
+* [clean-containers-1](tests/clean-containers-1.md)
+* [clean-images-1](tests/clean-images-1.md)
+* [docker-ip-1](tests/docker-ip-1.md)
+* [enter-1](tests/enter-1.md)
+* [kill-all-1](tests/kill-all-1.md)
+* [start-ui-1](tests/start-ui-1.md)
+* [update-hosts-1](tests/update-hosts-1.md)
 
 ## LIBRARY
 
-* [functions.sh](lib/functions.html)
+* [functions.sh](lib/functions.md)
 
 ## METADATA
 

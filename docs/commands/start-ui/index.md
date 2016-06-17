@@ -1,4 +1,4 @@
-[docker](../../index.html)
+[docker](../../index.md)
 # start-ui 
 
 Start docker-ui. Browse to http://localhost:9000/ to view/manage containers
@@ -23,7 +23,7 @@ Use the `stubbs:test` command to to run test plans.
 
 *Test plan sources*
 
-* [start-ui-1](../../tests/start-ui-1.html)
+* [start-ui-1](../../tests/start-ui-1.md)
   * it fails without a real test
 
 ## SCRIPT
@@ -36,7 +36,7 @@ command. It will open the command script in your shell EDITOR.
 
 *Script source*
 
-* [script](script.html): `RERUN_MODULE_DIR/commands/start-ui/script`
+* [script](script.md): `RERUN_MODULE_DIR/commands/start-ui/script`
 
 ## METADATA
 

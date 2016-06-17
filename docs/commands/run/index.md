@@ -1,4 +1,4 @@
-[docker](../../index.html)
+[docker](../../index.md)
 # run 
 
 Run an existing container and execute commands
@@ -9,7 +9,7 @@ Run an existing container and execute commands
 
 ### OPTIONS
 
-* [   [--mount </root>]: Where to mount the current directory](../../options/mount/index.html)
+* [   [--mount </root>]: Where to mount the current directory](../../options/mount/index.md)
 
 ## README
 
@@ -35,7 +35,7 @@ command. It will open the command script in your shell EDITOR.
 
 *Script source*
 
-* [script](script.html): `RERUN_MODULE_DIR/commands/run/script`
+* [script](script.md): `RERUN_MODULE_DIR/commands/run/script`
 
 ## METADATA
 

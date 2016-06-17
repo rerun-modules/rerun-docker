@@ -1,4 +1,4 @@
-[docker](../../index.html)
+[docker](../../index.md)
 # enter 
 
 Run an existing container and execute commands
@@ -23,7 +23,7 @@ Use the `stubbs:test` command to to run test plans.
 
 *Test plan sources*
 
-* [enter-1](../../tests/enter-1.html)
+* [enter-1](../../tests/enter-1.md)
   * it fails without a real test
 
 ## SCRIPT
@@ -36,7 +36,7 @@ command. It will open the command script in your shell EDITOR.
 
 *Script source*
 
-* [script](script.html): `RERUN_MODULE_DIR/commands/enter/script`
+* [script](script.md): `RERUN_MODULE_DIR/commands/enter/script`
 
 ## METADATA
 
