@@ -1,0 +1,80 @@
+.TH docker 1 "Fri Jun 17 07:31:49 EDT 2016" "Version 1.0.0" "RERUN User Manual" 
+.SH NAME
+docker \- Docker Shortcuts
+.PP
+.SH SYNOPSIS
+.PP
+\f[CR] 
+rerun [ARGS] docker: [ clean-containers | clean-images | enter | ip | kill-all | memory | run | start-ui | update-hosts ] [OPTIONS]
+\f[]
+
+.SH COMMANDS
+.SH docker:clean-containers \f[]
+
+Removes all containers
+.PP
+\f[I]OPTIONS\f[]
+
+.SH docker:clean-images \f[]
+
+Removes all dangling images (i.e. not in use)
+.PP
+\f[I]OPTIONS\f[]
+
+.SH docker:enter \f[]
+
+Run an existing container and execute commands
+.PP
+\f[I]OPTIONS\f[]
+
+.SH docker:ip \f[]
+
+Get the IP of a running container
+.PP
+\f[I]OPTIONS\f[]
+
+.SH docker:kill-all \f[]
+
+Kills all running containers
+.PP
+\f[I]OPTIONS\f[]
+
+.SH docker:memory \f[]
+
+Kills all running containers
+.PP
+\f[I]OPTIONS\f[]
+
+.SH docker:run \f[][--mount </root>]
+
+Run an existing container and execute commands
+.PP
+\f[I]OPTIONS\f[]
+.TP
+.B \--mount \f[]Where to mount the current directory\f[]
+required: \f[I]false\f[] ,
+arguments: \f[I]true\f[]
+, default: \f[I]/root\f[]
+.RS
+.RE
+.SH docker:start-ui \f[]
+
+Start docker-ui. Browse to http://localhost:9000/ to view/manage containers
+.PP
+\f[I]OPTIONS\f[]
+
+.SH docker:update-hosts \f[]
+
+Update local /etc/hosts file with container IP addresses
+.PP
+\f[I]OPTIONS\f[] ; # command section done.
+
+.SH RETURN VALUES
+.PP
+Successful completion: 0
+.SH AUTHORS
+mcrowe
+.SH "SEE ALSO"
+rerun
+.SH KEYWORDS
+docker
