@@ -1,14 +1,20 @@
-.TH docker 1 "Fri Jun 17 07:31:49 EDT 2016" "Version 1.0.0" "RERUN User Manual" 
+.TH docker 1 "Sat Mar 18 15:58:02 EDT 2017" "Version 1.0.0" "RERUN User Manual" 
 .SH NAME
 docker \- Docker Shortcuts
 .PP
 .SH SYNOPSIS
 .PP
 \f[CR] 
-rerun [ARGS] docker: [ clean-containers | clean-images | enter | ip | kill-all | memory | run | start-ui | update-hosts ] [OPTIONS]
+rerun [ARGS] docker: [ clean-all | clean-containers | clean-images | cpu | enter | exec-last-started | get-id | get-image | get-ip | get-state | ip | kill-all | memory | run | start-ui | update-hosts ] [OPTIONS]
 \f[]
 
 .SH COMMANDS
+.SH docker:clean-all \f[]
+
+Clean everything (docker containers, images, and vfs files)
+.PP
+\f[I]OPTIONS\f[]
+
 .SH docker:clean-containers \f[]
 
 Removes all containers
@@ -21,9 +27,45 @@ Removes all dangling images (i.e. not in use)
 .PP
 \f[I]OPTIONS\f[]
 
+.SH docker:cpu \f[]
+
+Get the cpu used by all running containers
+.PP
+\f[I]OPTIONS\f[]
+
 .SH docker:enter \f[]
 
 Run an existing container and execute commands
+.PP
+\f[I]OPTIONS\f[]
+
+.SH docker:exec-last-started \f[]
+
+docker exec into the last container started
+.PP
+\f[I]OPTIONS\f[]
+
+.SH docker:get-id \f[]
+
+Get the container ID of a docker container using the friendly name
+.PP
+\f[I]OPTIONS\f[]
+
+.SH docker:get-image \f[]
+
+Get the image of a container using the friendly name
+.PP
+\f[I]OPTIONS\f[]
+
+.SH docker:get-ip \f[]
+
+Get the IP of a running docker container (using name or sha1)
+.PP
+\f[I]OPTIONS\f[]
+
+.SH docker:get-state \f[]
+
+Get the state of a container using the friendly name
 .PP
 \f[I]OPTIONS\f[]
 
@@ -41,7 +83,7 @@ Kills all running containers
 
 .SH docker:memory \f[]
 
-Kills all running containers
+Get the memory used by all running containers
 .PP
 \f[I]OPTIONS\f[]
 

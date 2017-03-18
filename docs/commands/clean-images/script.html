@@ -123,9 +123,7 @@ rerun_options_parse <span class="s2">&quot;</span><span class="nv">$@</span><spa
 <div class="highlight"><pre>
 
 rerun_log <span class="s2">&quot;Removing all dangling images&quot;</span>
-docker images -q --filter <span class="s2">&quot;dangling=true&quot;</span> <span class="p">|</span> <span class="k">while</span> <span class="nb">read </span>IMAGE<span class="p">;</span> <span class="k">do</span>
-  docker rmi <span class="nv">$IMAGE</span>
-<span class="k">done</span>
+docker rmi <span class="k">$(</span>docker images -f <span class="s2">&quot;dangling=true&quot;</span> -q<span class="k">)</span>
 
 </pre></div>
 

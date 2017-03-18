@@ -5,6 +5,6 @@ Use the `stubbs:test` command to to run test plans.
 
 *Test plan sources*
 
-* [start-ui-1](tests/start-ui-1.md)
+* [start-ui-1](tests/start-ui-1.html)
   * it fails without a real test
 

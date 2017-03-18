@@ -5,6 +5,6 @@ Use the `stubbs:test` command to to run test plans.
 
 *Test plan sources*
 
-* [clean-containers-1](tests/clean-containers-1.md)
+* [clean-containers-1](tests/clean-containers-1.html)
   * it fails without a real test
 

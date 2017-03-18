@@ -37,7 +37,7 @@
 <p>Source the option parser script.</p>
 
 <div class="highlight"><pre>
-<span class="k">if</span> <span class="o">[[</span> -r <span class="nv">$RERUN_MODULE_DIR</span>/commands/<span class="nv">$1</span>/options.sh <span class="o">]]</span> 
+<span class="k">if</span> <span class="o">[[</span> -r <span class="nv">$RERUN_MODULE_DIR</span>/commands/<span class="nv">$1</span>/options.sh <span class="o">]]</span>
 <span class="k">then</span>
     . <span class="nv">$RERUN_MODULE_DIR</span>/commands/<span class="nv">$1</span>/options.sh <span class="o">||</span> <span class="o">{</span>
         rerun_die <span class="s2">&quot;Failed loading options parser.&quot;</span>
@@ -54,8 +54,13 @@
 
 <div class="highlight"><pre>
 
+<span class="k">function</span> last_container_started <span class="o">{</span>
+  docker ps -a -q -l
+<span class="o">}</span>
 
-
+<span class="k">function</span> last_container_exited <span class="o">{</span>
+  docker ps -a -q -l -f <span class="nv">status</span><span class="o">=</span>exited
+<span class="o">}</span>
 
 
 </pre></div>

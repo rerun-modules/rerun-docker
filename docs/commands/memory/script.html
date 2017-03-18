@@ -67,7 +67,7 @@ the error message and exit with the error command exit status.</p>
 
 <div class="highlight"><pre>
 
-<span class="nb">trap</span> <span class="s1">&#39;rerun_die $? &quot;*** command failed: docker:memory. ***&quot;&#39;</span> ERR
+<span class="c">#trap &#39;rerun_die $? &quot;*** command failed: docker:memory. ***&quot;&#39; ERR</span>
 
 </pre></div>
 
@@ -121,9 +121,18 @@ rerun_options_parse <span class="s2">&quot;</span><span class="nv">$@</span><spa
 <hr />
 
 <div class="highlight"><pre>
-<span class="k">for</span> line in <span class="sb">`</span>docker ps <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span> <span class="p">|</span> grep -v CONTAINER<span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
-  docker ps <span class="p">|</span> grep <span class="nv">$line</span> <span class="p">|</span> awk <span class="s1">&#39;{printf $NF&quot; &quot;}&#39;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="k">$((</span> <span class="sb">`</span>cat /sys/fs/cgroup/memory/system.slice/docker-<span class="nv">$line</span>*/memory.usage_in_bytes<span class="sb">`</span> <span class="o">/</span> <span class="m">1024</span> <span class="o">/</span> <span class="m">1024</span> <span class="k">))</span>MB
-<span class="k">done</span>
+
+docker stats --help <span class="p">|</span> grep no-stream -q
+<span class="nv">USE_STATS</span><span class="o">=(</span><span class="nv">$?</span><span class="o">==</span>0<span class="o">)</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$USE_STATS</span> <span class="o">==</span> <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  docker stats --format <span class="s2">&quot;{{.Container}}/{{.Name}}: {{.CPUPerc}}&quot;</span> <span class="nv">$@</span>
+<span class="k">else</span>
+  <span class="k">for</span> line in <span class="sb">`</span>docker ps <span class="p">|</span> grep <span class="nv">$_CMD_LINE</span> <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span> <span class="p">|</span> grep -v CONTAINER<span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
+    <span class="nv">NAME</span><span class="o">=</span><span class="k">$(</span>docker inspect --format <span class="s2">&quot;{{ .Name }}&quot;</span> <span class="s2">&quot;</span><span class="nv">$line</span><span class="s2">&quot;</span><span class="k">)</span>
+    <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$line$NAME</span><span class="s2">: &quot;</span> <span class="k">$(</span>docker stats --no-stream <span class="nv">$line</span> <span class="p">|</span> tail -n <span class="m">1</span> <span class="p">|</span> awk <span class="s1">&#39;{print $3 &quot; &quot; $4}&#39;</span><span class="k">)</span>
+  <span class="k">done</span>
+<span class="k">fi</span>
 
 </pre></div>
 

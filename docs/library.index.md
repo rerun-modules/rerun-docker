@@ -1,1 +1,1 @@
-* [functions.sh](lib/functions.md)
+* [functions.sh](lib/functions.html)
