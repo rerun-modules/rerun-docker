@@ -33,23 +33,6 @@
 
 * [mount](options/mount/index.html): Where to mount the current directory
 
-## TESTS
-
-* [clean-all-1](tests/clean-all-1.html)
-* [clean-containers-1](tests/clean-containers-1.html)
-* [clean-images-1](tests/clean-images-1.html)
-* [docker-ip-1](tests/docker-ip-1.html)
-* [enter-1](tests/enter-1.html)
-* [exec-last-started-1](tests/exec-last-started-1.html)
-* [get-id-1](tests/get-id-1.html)
-* [get-image-1](tests/get-image-1.html)
-* [get-ip-1](tests/get-ip-1.html)
-* [get-state-1](tests/get-state-1.html)
-* [kill-all-1](tests/kill-all-1.html)
-* [memory-1](tests/memory-1.html)
-* [start-ui-1](tests/start-ui-1.html)
-* [update-hosts-1](tests/update-hosts-1.html)
-
 ## LIBRARY
 
 * [functions.sh](lib/functions.html)
