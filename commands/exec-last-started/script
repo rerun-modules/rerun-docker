@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+#/ command: docker:exec-last-started: "docker exec into the last container started"
+#/ usage: rerun docker:exec-last-started [options]
+#/ rerun-variables: RERUN, RERUN_VERSION, RERUN_MODULES, RERUN_MODULE_DIR
+#/ option-variables:
+
+. $RERUN_MODULE_DIR/lib/functions.sh exec-last-started || {
+  echo >&2 "Failed loading function library." ; exit 1 ;
+}
+
+set -o errexit -o nounset -o pipefail
+
+rerun_options_parse "$@"
+
+# Command implementation
+# ----------------------
+
+# - - -
+# Put the command implementation here.
+# - - -
+docker exec -ti $(last_container_started) /bin/bash
+
+# Done. Exit with last command exit status.
+exit $?
+

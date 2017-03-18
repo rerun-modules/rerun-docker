@@ -13,7 +13,7 @@
 
 # Source the option parser script.
 #
-if [[ -r $RERUN_MODULE_DIR/commands/$1/options.sh ]] 
+if [[ -r $RERUN_MODULE_DIR/commands/$1/options.sh ]]
 then
     . $RERUN_MODULE_DIR/commands/$1/options.sh || {
         rerun_die "Failed loading options parser."
@@ -24,5 +24,10 @@ fi
 # Your functions declared here.
 # - - -
 
+function last_container_started {
+  docker ps -a -q -l
+}
 
-
+function last_container_exited {
+  docker ps -a -q -l -f status=exited
+}

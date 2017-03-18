@@ -64,9 +64,7 @@ rerun_options_parse "$@"
 # - - -
 
 rerun_log "Removing all dangling images"
-docker images -q --filter "dangling=true" | while read IMAGE; do
-  docker rmi $IMAGE
-done
+docker rmi $(docker images -f "dangling=true" -q)
 
 # Done. Exit with last command exit status.
 exit 0

@@ -63,10 +63,8 @@ rerun_options_parse "$@"
 # Put the command implementation here.
 # - - -
 
-rerun_log "Removing all containers"
-docker ps -aq | while read CONTAINER; do
-  docker rm -f $CONTAINER
-done
+rerun_log "Removing all exited containers"
+docker rm -v $(docker ps -a -q -f status=exited)
 
 # Done. Exit with last command exit status.
 exit 0

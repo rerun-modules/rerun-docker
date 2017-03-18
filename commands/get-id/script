@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+#/ command: docker:get-id: "Get the container ID of a docker container using the friendly name"
+#/ usage: rerun docker:get-id [options]
+#/ rerun-variables: RERUN, RERUN_VERSION, RERUN_MODULES, RERUN_MODULE_DIR
+#/ option-variables:
+
+. $RERUN_MODULE_DIR/lib/functions.sh get-id || {
+  echo >&2 "Failed loading function library." ; exit 1 ;
+}
+
+set -o errexit -o nounset -o pipefail
+
+rerun_options_parse "$@"
+
+# Command implementation
+# ----------------------
+
+# - - -
+# Put the command implementation here.
+# - - -
+
+docker inspect --format "{{ .ID }}" "$1"
+
+# Done. Exit with last command exit status.
+exit $?
+

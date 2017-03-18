@@ -9,15 +9,15 @@
 # The `command` and `usage` comments describe the command
 # and show its options.
 #
-#/ command: docker:memory: "Kills all running containers"
-#/ usage: rerun docker:memory [options]
+#/ command: docker:cpu: "Kills all running containers"
+#/ usage: rerun docker:cpu [options]
 
 # Load common functions
 # ---------------------
 
 # Load the function library for this module.
 # This loads rerun functions, too.
-. $RERUN_MODULE_DIR/lib/functions.sh memory || {
+. $RERUN_MODULE_DIR/lib/functions.sh cpu || {
   echo >&2 "Failed loading function library." ; exit 1 ;
 }
 
@@ -67,11 +67,11 @@ docker stats --help | grep no-stream -q
 USE_STATS=($?==0)
 
 if [ $USE_STATS == 1 ]; then
-  docker stats --format "{{.Container}}/{{.Name}}: {{.CPUPerc}}" $@
+  docker stats --format "{{.Container}}/{{.Name}}: {{.CPUPerc}}"
 else
   for line in `docker ps | grep $_CMD_LINE | awk '{print $1}' | grep -v CONTAINER`; do
     NAME=$(docker inspect --format "{{ .Name }}" "$line")
-    echo "$line$NAME: " $(docker stats --no-stream $line | tail -n 1 | awk '{print $3 " " $4}')
+    echo "$line$NAME: " $(docker stats --no-stream $line | tail -n 1 | awk '{print $2}')
   done
 fi
 
