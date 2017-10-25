@@ -13,8 +13,6 @@ addons:
     - fakeroot
     - build-essential
     - devscripts
-    - autoconf
-    - automake
     - dh-make
     - libfile-fcntllock-perl
     - rpm
