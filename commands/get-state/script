@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+#/ command: docker:get-state: "Get the state of a container using the friendly name"
+#/ usage: rerun docker:get-state [options]
+#/ rerun-variables: RERUN, RERUN_VERSION, RERUN_MODULES, RERUN_MODULE_DIR
+#/ option-variables:
+
+. $RERUN_MODULE_DIR/lib/functions.sh get-state || {
+  echo >&2 "Failed loading function library." ; exit 1 ;
+}
+
+set -o errexit -o nounset -o pipefail
+
+rerun_options_parse "$@"
+
+# Command implementation
+# ----------------------
+
+# - - -
+# Put the command implementation here.
+# - - -
+
+docker inspect --format "{{ .State.Running }}" "$1"
+
+
+# Done. Exit with last command exit status.
+exit $?
+

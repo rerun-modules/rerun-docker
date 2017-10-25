@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+#/ command: docker:get-ip: "Get the IP of a running docker container (using name or sha1)"
+#/ usage: rerun docker:get-ip [options]
+#/ rerun-variables: RERUN, RERUN_VERSION, RERUN_MODULES, RERUN_MODULE_DIR
+#/ option-variables:
+
+. $RERUN_MODULE_DIR/lib/functions.sh get-ip || {
+  echo >&2 "Failed loading function library." ; exit 1 ;
+}
+
+set -o errexit -o nounset -o pipefail
+
+rerun_options_parse "$@"
+
+# Command implementation
+# ----------------------
+
+# - - -
+# Put the command implementation here.
+# - - -
+
+docker inspect --format "{{ .NetworkSettings.IPAddress }}" $1
+
+# Done. Exit with last command exit status.
+exit $?
+

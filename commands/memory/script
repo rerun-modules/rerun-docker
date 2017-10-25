@@ -29,7 +29,7 @@
 # Trap errors and exit. The call to `rerun_die` will print the
 # the error message and exit with the error command exit status.
 
-trap 'rerun_die $? "*** command failed: docker:memory. ***"' ERR
+#trap 'rerun_die $? "*** command failed: docker:memory. ***"' ERR
 
 # Run [set] `nounset` to treat unset variables as errors. Set [pipefail]
 # so a pipeline return status is the value of the last
@@ -62,9 +62,18 @@ rerun_options_parse "$@"
 # - - -
 # Put the command implementation here.
 # - - -
-for line in `docker ps | awk '{print $1}' | grep -v CONTAINER`; do
-  docker ps | grep $line | awk '{printf $NF" "}' && echo $(( `cat /sys/fs/cgroup/memory/system.slice/docker-$line*/memory.usage_in_bytes` / 1024 / 1024 ))MB
-done
+
+docker stats --help | grep no-stream -q
+USE_STATS=($?==0)
+
+if [ $USE_STATS == 1 ]; then
+  docker stats --format "{{.Container}}/{{.Name}}: {{.CPUPerc}}" $@
+else
+  for line in `docker ps | grep $_CMD_LINE | awk '{print $1}' | grep -v CONTAINER`; do
+    NAME=$(docker inspect --format "{{ .Name }}" "$line")
+    echo "$line$NAME: " $(docker stats --no-stream $line | tail -n 1 | awk '{print $3 " " $4}')
+  done
+fi
 
 # Done. Exit with last command exit status.
 exit $?

@@ -5,6 +5,6 @@ Use the `stubbs:test` command to to run test plans.
 
 *Test plan sources*
 
-* [enter-1](tests/enter-1.md)
+* [enter-1](tests/enter-1.html)
   * it fails without a real test
 

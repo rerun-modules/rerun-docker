@@ -122,10 +122,8 @@ rerun_options_parse <span class="s2">&quot;</span><span class="nv">$@</span><spa
 
 <div class="highlight"><pre>
 
-rerun_log <span class="s2">&quot;Removing all containers&quot;</span>
-docker ps -aq <span class="p">|</span> <span class="k">while</span> <span class="nb">read </span>CONTAINER<span class="p">;</span> <span class="k">do</span>
-  docker rm -f <span class="nv">$CONTAINER</span>
-<span class="k">done</span>
+rerun_log <span class="s2">&quot;Removing all exited containers&quot;</span>
+docker rm -v <span class="k">$(</span>docker ps -a -q -f <span class="nv">status</span><span class="o">=</span>exited<span class="k">)</span>
 
 </pre></div>
 

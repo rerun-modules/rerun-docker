@@ -63,7 +63,7 @@ rerun_options_parse "$@"
 # Put the command implementation here.
 # - - -
 
-docker inspect --format '{{ .NetworkSettings.IPAddress }}' $@
+docker inspect --format "{{ .NetworkSettings.IPAddress }}" $1
 
 # Done. Exit with last command exit status.
 exit $?
