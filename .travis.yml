@@ -18,8 +18,6 @@ addons:
     - rpm
     - xmlstarlet
     - jq
-    - wget
-    - zip
     - rerun
     - rerun-bintray
     sources:
